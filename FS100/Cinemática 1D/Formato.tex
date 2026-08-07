@@ -1,0 +1,36 @@
+% ====== Paquetes básicos ======
+\usepackage[utf8]{inputenc}    % Codificación UTF-8
+\usepackage[T1]{fontenc}       % Acentos correctos
+\usepackage[spanish, es-nodecimaldot]{babel}    % Traducción al español
+\usepackage{csquotes}          % Recomendado para biblatex con babel
+\usepackage{hyperref}          % Hipervínculos
+\usepackage{amsmath,amssymb}   % Matemáticas
+\usepackage{graphicx}          % Imágenes
+\usepackage{caption}           % Mejor control de captions
+\usepackage{geometry}          % Márgenes
+\usepackage{fancyhdr}          % Encabezados y pies
+\usepackage{parskip}           % Mejor separación entre párrafos
+\usepackage{siunitx}           % Unidades del SI
+
+% ====== Configuración ======
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\setlength{\headheight}{13pt}
+\lhead{\leftmark}
+
+% ====== Comando personalizado para imágenes ======
+% Uso: \imagen{ruta}{Texto del pie de figura}
+\newcommand{\imagen}[2]{
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=200px]{#1}
+        \caption{#2}
+    \end{figure}
+}
+
+% ====== Datos ======
+\title{Cinemática 1D}
+\author{}
+\date{\today}

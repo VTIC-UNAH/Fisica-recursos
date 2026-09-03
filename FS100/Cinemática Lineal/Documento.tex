@@ -1,0 +1,132 @@
+\documentclass{article}
+
+\input{./Formato.tex}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Problemas de exámenes de la UNAH}
+
+\begin{enumerate}
+    \item El tren bala Shinkansen utilizado en Japón es reconocido por su velocidad y alta seguridad. Se solicita evaluar el recorrido que este realiza al ir de una estación a otra. El tren parte de una estación desde el reposo y acelera uniformemente a \SI{0.50}{\meter\per\second\squared} hasta alcanzar su velocidad máxima de \SI{300}{\kilo\meter\per\hour}. Luego mantiene esta velocidad durante 5.00 minutos en un tramo recto. Finalmente empieza a frenar a \SI{2.70}{\meter\per\second\squared} hasta detenerse en la siguiente estación. ¿Cuál es la distancia recorrida entre ambas estaciones?\label{unah:1}
+    \item Conforme un barco se acerca al muelle a una velocidad constante de \SI{45.0}{\centi\meter\per\second}, es necesario lanzarle una pieza de un equipo importante para que pueda atracar. El equipo se lanza a \SI{15.0}{\meter\per\second} a \SI{50.0}{\degree} con respecto a la horizontal, desde lo alto de una torre en la orilla del agua, a \SI{8.75}{\meter} por encima de la cubierta del barco. Para que el equipo caiga en el barco, ¿a qué distancia $D$ del muelle debería estar el barco cuando se lance el equipo? Considere despreciable la resistencia al aire y tome $g = \SI{9.81}{\meter\per\second\squared}$.\label{unah:2}
+    \imagen{./Images/draw1.pdf}{Dibujo del problema~\ref{unah:2}.}
+\end{enumerate}
+
+\section{Resolución y respuestas}
+
+\begin{enumerate}
+    \item Problema N.~\ref{unah:1}
+    
+    Para este ejercicio se consideran 3 tramos: el primero es el de aceleración, el segundo es a velocidad constante y el tercero de desaceleración. Al sumar las distancias de cada tramo se obtiene la distancia total recorrida entre ambas estaciones.
+
+    Para el primer tramo utiizaremos la ecuación:
+
+    \[
+        v^2 = v_0^2 + 2 a \Delta x
+    \]
+
+    Despejamos para la distancia:
+
+    \[
+        \Delta x_1 = \frac{v^2 - v_0^2}{2 a}
+    \]
+
+    Como partimos del reposo, $v_0 = 0$, y la velocidad máxima es de \SI{300}{\kilo\meter\per\hour} que equivale a \SI{83.3}{\meter\per\second}. Sustituyendo los valores:
+
+    \[
+        \Delta x_1 = \frac{(83.3)^2 - 0^2}{2 (0.50)} = \SI{6940}{\meter}
+    \]
+
+    Para el segundo tramo, la distancia recorrida a velocidad constante se calcula con la fórmula:
+    \[
+        \Delta x_2 = v \cdot t
+    \]
+    donde $v = \SI{83.3}{\meter\per\second}$ y $t = 5.00 \text{ min} = 300 \text{ s}$. Sustituyendo los valores:
+    \[
+        \Delta x_2 = 83.3 \cdot 300 = \SI{25000}{\meter}
+    \]
+
+    Para el tercer tramo, la distancia recorrida al frenar se calcula con la misma ecuación que en el primer tramo:
+    \[
+        \Delta x_3 = \frac{v^2 - v_0^2}{2 a}
+    \]
+    donde $v = 0$, $v_0 = \SI{83.3}{\meter\per\second}$ y $a = -2.70 \text{ m/s}^2$. Sustituyendo los valores:
+    \[
+        \Delta x_3 = \frac{0^2 - (83.3)^2}{2 (-2.70)} = \SI{1280}{\meter}
+    \]
+
+    La distancia total recorrida entre ambas estaciones es:
+    \[
+        \Delta x_{\text{total}} = \Delta x_1 + \Delta x_2 + \Delta x_3 = \SI{6940}{\meter} + \SI{25000}{\meter} + \SI{1280}{\meter} = \SI{33200}{\meter}
+    \]
+
+    Por lo cual, la respuesta final es:
+    \[
+        \boxed{\Delta x = \SI{33200}{\meter}}
+    \]
+
+    \item Problema N.~\ref{unah:2}
+    
+    Para este caso deberemos analizar el movimiento del equipo lanzado en dos partes: en caída libre (eje vertical) y en movimiento horizontal. La ecuación de movimiento vertical es:
+
+    El primero lo analizaremos para conocer el tiempo que le toma caer. Utilizaremos la ecuación:
+
+    \[
+        y = y_0 + v_{0y} t - \frac{1}{2} g t^2
+    \]
+
+    Tomando la referencia a la altura de la cubierta del barco se tiene que $y = 0$ y $y_0 = \SI{8.75}{\meter}$.
+    
+    Para la velocidad vertical deberemos descomponer la velocidad inicial tomando en cuenta el ángulo de lanzamiento: $v_{0y} = v_0 \sin \theta = 15.0 \sin (50.0^\circ) = \SI{11.5}{\meter\per\second}$ y $g = \SI{9.81}{\meter\per\second\squared}$. Sustituyendo los valores:
+
+    \[
+        0 = 8.75 + 11.5 t - \frac{1}{2} (9.81) t^2
+    \]
+
+    Esto es:
+
+    \[
+        -4.91 t^2 + 11.5 t + 8.75 = 0
+    \]
+
+    Resolviendo la ecuación cuadrática se obtiene que $t = 2.95 \text{ s}$ (tomamos el valor positivo).
+
+    Ahora podemos analizar el movimiento horizontal. La ecuación de movimiento horizontal es:
+
+    \[
+        x = x_0 + v_{0x} t
+    \]
+
+    La velocidad horizontal se obtiene de la descomposición de la velocidad inicial: $v_{0x} = v_0 \cos \theta = 15.0 \cos (50.0^\circ) = \SI{9.64}{\meter\per\second}$. Sustituyendo los valores:
+
+    \[
+        x = 0 + 9.64 (2.95) = \SI{28.4}{\meter}
+    \]
+
+    Ahora sabemos donde estará el barco en el momento en que el equipo llegue a la cubierta. Esto es en $t = 2.95 \text{ s}$, y el barco se mueve a una velocidad constante de \SI{-45.0}{\centi\meter\per\second} = \SI{-0.45}{\meter\per\second}. Note que la velocidad es negativa, pues se está acercando al muelle. Entonces usando la siguiente ecuación podremos conocer dónde está el barco en $t = 0 \text{ s}$:
+
+    \[
+        x = x_0 + v t
+    \]
+
+    Donde, al tomar la referencia del muelle, $x_0 = D$, $x$ es donde está el barco al recibir el equipo, es decir $x = 28.4 \text{ m}$, y $v = \SI{-0.45}{\meter\per\second}$. Sustituyendo los valores:
+
+    \[
+        28.4 = D + (-0.45) (2.95)
+    \]
+
+    Resolviendo para $D$:
+    \[
+        D = 28.4 - (-0.45) (2.95) = \SI{29.7}{\meter}
+    \]
+
+    Por lo tanto, la distancia que debe estar el barco del muelle es:
+    \[
+        \boxed{D = \SI{29.7}{\meter}}
+    \]
+
+\end{enumerate}
+
+\end{document}
